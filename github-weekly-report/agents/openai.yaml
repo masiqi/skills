@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Weekly Report"
+  short_description: "Aggregate weekly GitHub activity into work logs."
+  default_prompt: "Use $github-weekly-report to summarize my GitHub activity from the last 7 days into a weekly work log."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Issue-Driven Development"
+  short_description: "Standard workflow for researched, issue-scoped development"
+  default_prompt: "Use this workflow for a new feature request: create a branch, research first, create a GitHub issue, then implement from that issue context."
