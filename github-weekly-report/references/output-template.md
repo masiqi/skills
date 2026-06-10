@@ -10,7 +10,7 @@ Otherwise use this default Chinese structure:
   1. <工作线 A>
   - <具体动作 1>：<做了什么>，<解决了什么问题 / 带来什么结果>
   - <具体动作 2>：<做了什么>，<解决了什么问题 / 带来什么结果>
-  - <当前状态>：<仍 open 的 issue / PR，或下一步推进点>
+  - <当前状态>：<仍未关闭的 issue / 未合并的 PR，或下一步推进点>
   2. <工作线 B>
   - <具体动作 1>：<做了什么>，<解决了什么问题 / 带来什么结果>
   - <具体动作 2>：<做了什么>，<解决了什么问题 / 带来什么结果>
@@ -18,11 +18,11 @@ Otherwise use this default Chinese structure:
 
 Grouping heuristics:
 
-- CI / Workflow / Runner / Release
-- Runtime / OpenCode / LLM / MCP
-- Infra / Docker / K8s / Daytona / SWR
-- Docs / Runbook / Design / Planning
-- Collaboration / Merge / Repo maintenance
+- 持续集成 / 工作流 / 自托管执行机 / 发布
+- 运行时 / OpenCode / LLM / MCP / 模型调用
+- 基础设施 / Docker / K8s / Daytona / SWR
+- 文档 / 操作手册 / 方案设计 / 规划
+- 协作合入 / 仓库维护
 
 Writing rules:
 
@@ -34,11 +34,16 @@ Writing rules:
 - Mention open issues or unmerged PRs in a short status line under the relevant workstream.
 - If a collaborative PR includes one or two commits from the user, keep it under `协同推进/合入`, not `本人主线`.
 - Prefer natural Chinese over mixed Chinese-English commit wording.
+- Keep GitHub metric labels such as `PR`, `issues`, and `commits` in English when they make the count clearer; use Chinese for the surrounding narrative.
+- Keep exact identifiers in English when they are repository names, branch names, commands, API paths, model names, product names, protocol names, or established acronyms such as `GitHub`, `OpenCode`, `LLMLingua2`, `DCP`, `Qwen`, `Docker`, `Kubernetes/K8s`, `Daytona`, `SWR`, `GHCR`, `CI`, `API`, `LLM`, and `MCP`.
+- Translate generic technical terms for leaders and non-implementers: `worker` -> `工作服务`, `provider` -> `供应方`, `contract` -> `接口约定` or `契约`, `context` -> `上下文`, `workflow` -> `工作流`, `runner` -> `执行机`, `runbook` -> `操作手册`, `backlog` -> `待办`, `rollout` -> `上线` or `发布`.
 - Rewrite internal jargon into plain language whenever the meaning can be preserved.
 - Prefer concrete subjects over generic summaries.
-- Good: `将 PR checks 和 CodeQL 切到自托管 runner，减少公共 runner 排队和环境不一致导致的失败`
+- Good: `将 PR 校验和 CodeQL 切到自托管执行机，减少公共执行机排队和环境不一致导致的失败`
 - Bad: `持续处理 CI 稳定性问题`
 - Good: `搭建可复现的 Docker 验证环境，避免结果只在本机成立`
 - Bad: `构建 reproducible Docker eval 环境，支撑 guarded canary rollout`
 - Good: `补齐灰度验证和诊断能力，继续推进上线前保护措施`
 - Bad: `新增 guarded canary、diagnostics、replay、rollout guard`
+- Good: `新增远端压缩工作服务，并说明失败时放行的保护边界`
+- Bad: `新增 remote compression worker 和 fail-open guard`

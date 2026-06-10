@@ -45,12 +45,14 @@ Use this when the user wants a work log or status report from GitHub activity in
 - Default to `中等偏细` detail, not high-level slogans. A good first draft should usually make each workstream understandable without opening GitHub.
 - For each workstream, prefer `3-5` bullets when the data supports it.
 - Each bullet should usually contain both halves: `做了什么` and `解决了什么问题 / 带来什么结果`.
-- Name the concrete subsystem, workflow, or component whenever possible. Prefer `把 PR checks 和 CodeQL 切到自托管 runner，减少公共 runner 排队` over `持续优化 CI 稳定性`.
+- Name the concrete subsystem, workflow, or component whenever possible. Prefer `把 PR 校验和 CodeQL 切到自托管执行机，减少公共执行机排队` over `持续优化 CI 稳定性`.
 - When a chain of commits clearly belongs to one topic, collapse it into one workstream, but keep the important steps visible instead of over-compressing into one vague sentence.
 - If issues or PRs remain open, add a short `当前状态` bullet under the relevant workstream instead of burying that information in the summary line.
 - Prefer reports that can be pasted directly into a weekly log with minimal editing. Do not spend the first draft on process narration or raw data dumps unless the user asks for them.
-- Translate or compress internal jargon when possible. For example, prefer `灰度验证` over `guarded canary`, `回放验证` over `replay`, `诊断信息` over `diagnostics`, and `上线前保护措施` over `rollout guard`.
-- If a technical English term must remain, explain it in the same bullet with simple Chinese instead of stacking raw jargon.
+- Preserve English only when it is a useful fact label, identifier, or widely recognized proper noun. It is fine to keep GitHub activity labels like `PR`, `issues`, and `commits`; code identifiers; commands; API paths; branch names; repository names; model names; and established product/acronym names such as `GitHub`, `OpenCode`, `LLMLingua2`, `DCP`, `Qwen`, `Docker`, `Kubernetes/K8s`, `Daytona`, `SWR`, `GHCR`, `CI`, `API`, `LLM`, and `MCP`.
+- In reader-facing explanations, prefer Chinese for generic technical roles, states, and process terms. For example, prefer `工作服务` over `worker`, `供应方` over `provider`, `接口约定` or `契约` over `contract`, `上下文` over `context`, `工作流` over `workflow`, `执行机` over `runner`, `操作手册` over `runbook`, `待办` over `backlog`, `上线` or `发布` over `rollout`, and `健康检查` over `health check`.
+- Translate or compress internal jargon when possible. For example, prefer `灰度验证` over `guarded canary`, `冒烟验证` over `smoke`, `回放验证` over `replay`, `诊断信息` over `diagnostics`, `失败时放行` over `fail-open`, and `上线前保护措施` over `rollout guard`.
+- If an English term must remain because it is a product name, protocol, model, API field, or exact GitHub label, explain its impact in simple Chinese in the same bullet instead of stacking raw jargon.
 - Collapse long chains of related fixes into one understandable workstream. Do not echo every script or helper name unless it is important for understanding the result.
 
 ## Resources
